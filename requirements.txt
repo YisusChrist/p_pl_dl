@@ -1,4 +1,0 @@
-beautifulsoup4
-requests
-yt-dlp>=2022.10.4
-jsbeautifier
