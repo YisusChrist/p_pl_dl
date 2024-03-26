@@ -30,7 +30,7 @@ dHeaders = {
 }
 
 session = requests.Session()
-dCookiesParsed = {}
+dCookiesParsed: dict = {}
 
 
 def randomizeHeader():
@@ -144,7 +144,7 @@ class Page:
 class CipherAdapter(HTTPAdapter):
     # Sourced from https://stackoverflow.com/questions/64967706/python-requests-https-code-403-without-but-code-200-when-using-burpsuite
     def __init__(self):
-        CIPHERS = "DEFAULT:@SECLEVEL=2"
+        self.CIPHERS = "DEFAULT:@SECLEVEL=2"
 
     def init_poolmanager(self, *args, **kwargs):
         context = create_urllib3_context(ciphers=self.CIPHERS)
