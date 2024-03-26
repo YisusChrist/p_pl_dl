@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "p_pl_dl"
 version = "0.1.0"
-description = ""
+description = "A porn playlist downloader using yt-dlp and beautifulsoup, along with some limited support for image albums."
 license = "GPL-3.0-only"
 authors = ["Alejandro González Momblán <agelrenorenardo@gmail.com>"]
 readme = "README.md"
@@ -9,13 +9,20 @@ repository = "https://github.com/yisuschrist/p_pl_dl"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-beautifulsoup4 = "^4.12.2"
+beautifulsoup4 = "^4.12.3"
+jsbeautifier = "^1.15.1"
+platformdirs = "^4.2.0"
 requests = "^2.31.0"
-yt-dlp = ">=2022.10.4"
-jsbeautifier = "^1.14.9"
-rich = "^13.5.3"
+rich = "^13.7.1"
 rich-argparse-plus = "^0.3.1.4"
-platformdirs = "^3.11.0"
+yt-dlp = ">=2022.10.4"
+
+[tool.poetry.group.dev.dependencies]
+types-requests = "^2.31.0.20240311"
+types-beautifulsoup4 = "^4.12.0.20240229"
+
+[tool.poetry.scripts]
+p_pl_dl = "p_pl_dl.__main__:main"
 
 [build-system]
 requires = ["poetry-core"]
