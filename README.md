@@ -1,5 +1,41 @@
 # p_pl_dl - Porn Playlist Downloader
 
+<p align="center">
+    <a href="https://github.com/YisusChrist/p_pl_dl/issues">
+        <img src="https://img.shields.io/github/issues/YisusChrist/p_pl_dl?color=171b20&label=Issues%20%20&logo=gnubash&labelColor=e05f65&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
+    </a>
+    <a href="https://github.com/YisusChrist/p_pl_dl/forks">
+        <img src="https://img.shields.io/github/forks/YisusChrist/p_pl_dl?color=171b20&label=Forks%20%20&logo=git&labelColor=f1cf8a&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
+    </a>
+    <a href="https://github.com/YisusChrist/p_pl_dl/">
+        <img src="https://img.shields.io/github/stars/YisusChrist/p_pl_dl?color=171b20&label=Stargazers&logo=octicon-star&labelColor=70a5eb">&nbsp;&nbsp;&nbsp;
+    </a>
+    <a href="https://github.com/YisusChrist/p_pl_dl/actions">
+        <img alt="Tests Passing" src="https://github.com/YisusChrist/p_pl_dl/actions/workflows/github-code-scanning/codeql/badge.svg">&nbsp;&nbsp;&nbsp;
+    </a>
+    <a href="https://github.com/YisusChrist/p_pl_dl/pulls">
+        <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/YisusChrist/p_pl_dl?color=0088ff">&nbsp;&nbsp;&nbsp;
+    </a>
+    <a href="https://opensource.org/license/gpl-2-0/">
+        <img alt="License" src="https://img.shields.io/github/license/YisusChrist/p_pl_dl?color=0088ff">
+    </a>
+</p>
+
+<br>
+
+<p align="center">
+    <a href="https://github.com/YisusChrist/p_pl_dl/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/YisusChrist/p_pl_dl/issues/new/choose">Request Feature</a>
+    ·
+    <a href="https://github.com/YisusChrist/p_pl_dl/discussions">Ask Question</a>
+    ·
+    <a href="https://github.com/YisusChrist/p_pl_dl/security/policy#reporting-a-vulnerability">Report security bug</a>
+</p>
+
+<br>
+
+
 A porn playlist downloader using `yt-dlp` and `beautifulsoup`, along with some limited support for image albums.
 
 <details>
