@@ -4,8 +4,6 @@ from . import _common as dl_common
 
 sExtractor = "lewdthots"
 
-sTestUrl = r"https://lewdthots.com/meg-turney-lord-raiden-topless-onlyfans-set-leaked/"
-
 
 def run(sUrl, *args, **kwargs):
     print(f"Running {sExtractor} extractor for {sUrl}\r\n")
