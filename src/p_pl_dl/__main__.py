@@ -10,8 +10,8 @@ from rich_argparse_plus import RichHelpFormatterPlus
 
 from . import scrappers as dExtractors
 from .consts import *
-from .scrappers import _common as dl_common
 from .logs import logger
+from .scrappers import _common as dl_common
 
 
 def get_scrappers_list() -> list:
@@ -37,6 +37,10 @@ def detect_websites(urls) -> dict:
 
 
 def load_urls(source_file, url_argument):
+    if not source_file and not url_argument:
+        print("No input source provided. Exiting...")
+        exit_session(EXIT_FAILURE)
+        
     if source_file:
         try:
             with open(source_file) as fSourceUrls:
@@ -153,18 +157,19 @@ def exit_session(exit_value: int) -> None:
     sys.exit(exit_value)
 
 
-def main(argv):
-    if argv.dest is not None:
+def main():
+    args = get_parsed_args()
+    if args.dest:
         try:
-            os.chdir(argv.dest)
+            os.chdir(args.dest)
         except FileNotFoundError as e:
             print(f"Could not change the working directory: {e}")
             exit_session(EXIT_FAILURE)
 
     print(f"Working download directory: {os.getcwd()}")
 
-    sSourceCookies = argv.cookies
-    if sSourceCookies is not None:
+    sSourceCookies = args.cookies
+    if sSourceCookies:
         print(f"Cookies source: {sSourceCookies}")
         if ".txt'" in sSourceCookies:
             dl_common.parseCookieFile(sSourceCookies)
@@ -173,24 +178,24 @@ def main(argv):
     else:
         print(f"No cookies provided!")
 
-    sSourceUrls = argv.input
+    sSourceUrls = args.input
     print(f"Using the following input source: {sSourceUrls}")
 
-    nVideoLimit = int(argv.limit) if argv.limit is not None else None
+    nVideoLimit = int(args.limit) if args.limit else None
     print(f"Video limit per URL = {nVideoLimit}")
 
     # Load URLs from a file or command-line argument
-    sLines = load_urls(sSourceUrls, argv.url)
+    sLines = load_urls(sSourceUrls, args.url)
 
     # Detect websites from URLs
     detected_sites = detect_websites(sLines)
     print("Detected websites:")
     print(json.dumps(detected_sites, indent=4))
 
-    if argv.only and argv.only in get_scrappers_list():
-        # Filter only the URLs that match the site in argv.only
+    if args.only and args.only in get_scrappers_list():
+        # Filter only the URLs that match the site in args.only
         detected_sites = dict(
-            (k, v) for k, v in detected_sites.items() if v == argv.only
+            (k, v) for k, v in detected_sites.items() if v == args.only
         )
 
     for sUrl, sSite in detected_sites.items():
@@ -203,7 +208,6 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    args = get_parsed_args()
     # Enable rich error formatting in debug mode
     install(show_locals=DEBUG)
     if DEBUG:
@@ -212,6 +216,6 @@ if __name__ == "__main__":
         import cProfile
 
         print("[yellow]Profiling is enabled[/]")
-        cProfile.run("main(args)")
+        cProfile.run("main()")
     else:
-        main(args)
+        main()
