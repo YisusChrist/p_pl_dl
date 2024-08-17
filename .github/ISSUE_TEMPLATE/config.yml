@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-    - name: Contributing to Urls organizer
-      url: https://github.com/YisusChrist/p_pl_dl/blob/main/CONTRIBUTING.md
-      about: Guidelines for how to report an issue.
-    - name: Support
-      url: https://github.com/YisusChrist/p_pl_dl/discussions
-      about: Ask the community for support
-    - name: Documentation
-      url: https://github.com/YisusChrist/p_pl_dl/wiki
-      about: Many questions might be already answered here.
+  - name: Contributing
+    url: https://github.com/YisusChrist/.github/blob/main/CONTRIBUTING.md
+    about: Guidelines for how to report an issue.
+  - name: Support
+    url: ../discussions
+    about: Ask the community for support.
+  - name: Documentation
+    url: ../wiki
+    about: Many questions might be already answered here.
