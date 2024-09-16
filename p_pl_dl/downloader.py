@@ -23,7 +23,7 @@ def get_scrappers_list() -> list[str]:
     return scrappers
 
 
-def detect_websites(urls) -> dict:
+def detect_websites(urls) -> dict[str, str]:
     scrappers: list[str] = get_scrappers_list()
     return {url: site for url in urls for site in scrappers if site in url}
 

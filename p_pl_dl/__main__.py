@@ -1,5 +1,6 @@
 import json
 import os
+from argparse import Namespace
 from time import sleep
 
 from rich import print
@@ -14,9 +15,9 @@ from p_pl_dl.scrappers import _common as dl_common
 from p_pl_dl.utils import exit_session
 
 
-def main():
+def main() -> None:
     install(show_locals=DEBUG)
-    args = get_parsed_args()
+    args: Namespace = get_parsed_args()
     if args.dest:
         try:
             os.chdir(args.dest)
@@ -43,10 +44,10 @@ def main():
     print(f"Video limit per URL = {nVideoLimit}")
 
     # Load URLs from a file or command-line argument
-    sLines = load_urls(sSourceUrls, args.url)
+    sLines: list[str] = load_urls(sSourceUrls, args.url)
 
     # Detect websites from URLs
-    detected_sites = detect_websites(sLines)
+    detected_sites: dict[str, str] = detect_websites(sLines)
     print("Detected websites:")
     print(json.dumps(detected_sites, indent=4))
 
