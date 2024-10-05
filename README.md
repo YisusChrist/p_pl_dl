@@ -1,4 +1,4 @@
- p_pl_dl - Porn Playlist Downloader
+p_pl_dl - Porn Playlist Downloader
 
 <p align="center">
     <a href="https://github.com/YisusChrist/p_pl_dl/issues">
@@ -50,7 +50,7 @@ A porn playlist downloader using `yt-dlp` and `beautifulsoup`, along with some l
   - [Input TXT w/ URLs](#input-txt-w-urls)
   - [Cookies](#cookies)
 - [Contributors](#contributors)
-  - [How do I contribute to p\_pl\_dl?](#how-do-i-contribute-to-p_pl_dl)
+  - [How do I contribute to p_pl_dl?](#how-do-i-contribute-to-p_pl_dl)
 - [License](#license)
 
 </details>
@@ -197,7 +197,7 @@ I'm far from being an expert and suspect there are many ways to improve – if y
 
 We also need people to test out pull requests. So take a look through [the open issues](https://github.com/YisusChrist/p_pl_dl/issues) and help where you can.
 
-See [Contributing](https://github.com/YisusChrist/.github/blob/main/CONTRIBUTING.md) for more details.
+See [Contributing Guidelines](https://github.com/YisusChrist/.github/blob/main/CONTRIBUTING.md) for more details.
 
 ## License
 
