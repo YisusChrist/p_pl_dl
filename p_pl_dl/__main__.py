@@ -4,12 +4,16 @@ from argparse import Namespace
 from time import sleep
 
 from core_helpers.logs import logger
+from core_helpers.updates import check_updates
+from core_helpers.utils import print_welcome
 from rich import print
 from rich.traceback import install
 
 from p_pl_dl import scrappers as dExtractors
 from p_pl_dl.cli import get_parsed_args
-from p_pl_dl.consts import EXIT_FAILURE, LOG_FILE, PACKAGE
+from p_pl_dl.consts import EXIT_FAILURE, GITHUB, LOG_FILE, PACKAGE
+from p_pl_dl.consts import __desc__ as DESC
+from p_pl_dl.consts import __version__ as VERSION
 from p_pl_dl.downloader import (detect_websites, get_scrappers_list, load_urls,
                                 process_url)
 from p_pl_dl.scrappers import _common as dl_common
@@ -20,6 +24,12 @@ def main() -> None:
     args: Namespace = get_parsed_args()
     install(show_locals=args.debug)
     logger.setup_logger(PACKAGE, LOG_FILE, args.debug, args.verbose)
+
+    if GITHUB:
+        check_updates(GITHUB, VERSION)
+
+    print_welcome(PACKAGE, VERSION, DESC, GITHUB)
+
     if args.dest:
         try:
             os.chdir(args.dest)
