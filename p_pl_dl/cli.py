@@ -1,8 +1,10 @@
 from argparse import Namespace
 
-from core_helpers.cli import setup_parser, ArgparseColorThemes
+from core_helpers.cli import ArgparseColorThemes, setup_parser
 
-from p_pl_dl.consts import PACKAGE, DESC, VERSION
+from p_pl_dl.consts import PACKAGE
+from p_pl_dl.consts import __desc__ as DESC
+from p_pl_dl.consts import __version__ as VERSION
 from p_pl_dl.downloader import get_scrappers_list
 
 
