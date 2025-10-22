@@ -3,12 +3,13 @@ import os
 from argparse import Namespace
 from time import sleep
 
+from core_helpers.logs import logger
 from rich import print
 from rich.traceback import install
 
 from p_pl_dl import scrappers as dExtractors
 from p_pl_dl.cli import get_parsed_args
-from p_pl_dl.consts import DEBUG, EXIT_FAILURE, PROFILE
+from p_pl_dl.consts import EXIT_FAILURE, LOG_FILE, PACKAGE
 from p_pl_dl.downloader import (detect_websites, get_scrappers_list, load_urls,
                                 process_url)
 from p_pl_dl.scrappers import _common as dl_common
@@ -16,8 +17,9 @@ from p_pl_dl.utils import exit_session
 
 
 def main() -> None:
-    install(show_locals=DEBUG)
     args: Namespace = get_parsed_args()
+    install(show_locals=args.debug)
+    logger.setup_logger(PACKAGE, LOG_FILE, args.debug, args.verbose)
     if args.dest:
         try:
             os.chdir(args.dest)
@@ -67,13 +69,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    # Enable rich error formatting in debug mode
-    if DEBUG:
-        print("[yellow]Debug mode is enabled[/]")
-    if PROFILE:
-        import cProfile
-
-        print("[yellow]Profiling is enabled[/]")
-        cProfile.run("main()")
-    else:
-        main()
+    main()

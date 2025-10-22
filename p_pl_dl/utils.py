@@ -4,7 +4,7 @@ from typing import NoReturn
 from rich import print
 
 from p_pl_dl.consts import EXIT_FAILURE, LOG_PATH
-from p_pl_dl.logs import logger
+from core_helpers.logs import logger
 
 
 def exit_session(exit_value: int) -> NoReturn:
