@@ -1,10 +1,10 @@
 import sys
 from typing import NoReturn
 
+from core_helpers.logs import logger
 from rich import print
 
 from p_pl_dl.consts import EXIT_FAILURE, LOG_PATH
-from core_helpers.logs import logger
 
 
 def exit_session(exit_value: int) -> NoReturn:
