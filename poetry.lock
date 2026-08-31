@@ -493,14 +493,14 @@ urllib3 = ">=2"
 
 [[package]]
 name = "types-webencodings"
-version = "0.6.0.20260824"
+version = "0.6.0.20260827"
 description = "Typing stubs for webencodings"
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "types_webencodings-0.6.0.20260824-py3-none-any.whl", hash = "sha256:b28b40712c1031859021c91ced05d8747b2884e459e155c60f8766da270795df"},
-    {file = "types_webencodings-0.6.0.20260824.tar.gz", hash = "sha256:13c444fc6ae2c3920c228bee44a8e4d457485dc4d4352d0d783816a129b2cfd5"},
+    {file = "types_webencodings-0.6.0.20260827-py3-none-any.whl", hash = "sha256:10600b0833f6c2a565879df74f806df69659f6fd87857f11438b924c74587416"},
+    {file = "types_webencodings-0.6.0.20260827.tar.gz", hash = "sha256:b7a8ce68141ae0d318fbc479137f28dc245ba578ae07f6ec6ce35b294f04cf41"},
 ]
 
 [[package]]
